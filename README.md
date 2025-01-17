@@ -81,7 +81,7 @@ Selected Items: Product F, Gear H
 
 ## Contributing
 
-Feel free to fork this project, submit issues, or create pull requests to enhance the features and functionality.
+Feel free to fork this project, submit issues, or create pull requests to enhance it features and functionality.
 
 ## License
 
