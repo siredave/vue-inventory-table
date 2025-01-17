@@ -1,42 +1,48 @@
 <template>
- <div class="p-4 mb-6 text-white rounded-lg shadow-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
-  <h2 class="text-2xl font-bold text-center">
-    <span class="text-white">Selected Items : </span> 
-    <span class="text-yellow-200">{{ selectedItems.length }}</span>
-  </h2>
-</div>
+  <div class="p-4 mb-6 text-white rounded-lg shadow-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+    <h2 class="text-2xl font-bold text-center md:text-3xl lg:text-4xl">
+      <span class="text-white">Selected Items: </span>
+      <span class="text-yellow-200">{{ selectedItems.length }}</span>
+    </h2>
+  </div>
 
   <div class="overflow-x-auto bg-white rounded-lg shadow-lg">
-    <table class="min-w-full bg-white rounded-lg table-auto">
+    <table class="w-full bg-white rounded-lg table-auto">
       <thead class="bg-gray-200">
-        <tr class="text-sm text-left text-gray-600">
-          <th class="px-6 py-3 border-b">Name</th>
-          <th class="px-6 py-3 border-b">Price</th>
-          <th class="px-6 py-3 border-b">Location</th>
-          <th class="px-6 py-3 border-b">Owner</th>
-          <th class="px-6 py-3 border-b">In Stock</th>
+        <tr class="text-sm text-left text-gray-600 md:text-base">
+          <th class="px-4 py-2 border-b lg:px-6">Name</th>
+          <th class="px-4 py-2 border-b lg:px-6">Price</th>
+          <th class="px-4 py-2 border-b lg:px-6">Location</th>
+          <th class="px-4 py-2 border-b lg:px-6">Owner</th>
+          <th class="px-4 py-2 border-b lg:px-6">In Stock</th>
         </tr>
       </thead>
       <tbody>
-        <tr 
-          v-for="item in items" 
-          :key="item.id" 
+        <tr
+          v-for="item in items"
+          :key="item.id"
           @click="toggleItem(item)"
           :class="getItemClass(item) ? 'bg-blue-300' : ''"
           class="gap-2 transition duration-100 cursor-pointer hover:bg-gray-100"
         >
-          <td class="px-6 py-4 border-b">{{ item.name }}</td>
-          <td class="px-6 py-4 border-b">{{ item.price | currency }}</td>
-          <td class="px-6 py-4 border-b">{{ item.location }}</td>
-          <td class="px-6 py-4 border-b">{{ item.owner }}</td>
-          <td class="px-6 py-4 border-b">{{ item.instock ? "Yes" : "No" }}</td>
+          <td class="px-4 py-2 border-b lg:px-6">{{ item.name }}</td>
+          <td class="px-4 py-2 border-b lg:px-6">{{ item.price }}</td>
+          <td class="px-4 py-2 border-b lg:px-6">{{ item.location }}</td>
+          <td class="px-4 py-2 border-b lg:px-6">{{ item.owner }}</td>
+          <td class="px-4 py-2 border-b lg:px-6">{{ item.instock ? "Yes" : "No" }}</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <h2 v-if="selectedItems.length" class="mt-4 font-bold text-blue-600">Selected Items: 
-    <span class="font-semibold text-gray-600">{{ selectedItems.map(item => item.name).join(', ') }}</span>
+  <h2
+    v-if="selectedItems.length"
+    class="mt-4 text-sm font-bold text-blue-600 md:text-base lg:text-lg"
+  >
+    Selected Items:
+    <span class="font-semibold text-gray-600">
+      {{ selectedItems.map(item => item.name).join(', ') }}
+    </span>
   </h2>
 </template>
 
@@ -88,8 +94,8 @@ export default {
       } else {
         this.addItem(item);
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

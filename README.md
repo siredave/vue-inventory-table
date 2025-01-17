@@ -1,6 +1,3 @@
-Here's a `README.md` for your project:
-
-```markdown
 # Item Selection Table
 
 This project displays a list of items with information such as name, price, location, owner, and availability in stock. Users can select or deselect items by clicking on each row, and a summary of selected items is displayed at the top.
